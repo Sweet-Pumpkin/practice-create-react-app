@@ -1,24 +1,34 @@
-import { useState, useEffect } from "react";
-
-function Hello() {
-  function byeFn() {
-    console.log("bye :(")
-  }
-  function hiFn() {
-    console.log("created! :)");
-    return byeFn;
-  }
-  useEffect(hiFn, []);
-  return <h1>Hello</h1>;
-}
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [ showing, setShowing ] = useState(false);
-  const onClick = () => setShowing((prev) => !prev)
+  // ES6+ 문법
+  const [List, setList] = useState([0]);
+  const [Target, setTarget] = useState(1);
+  const ListFunction = () => {
+    // let temp = [ ...List ];
+    // temp.push(Target);
+    setList((arr) => [...arr, Target]);
+    setTarget(Target + 1);
+  }
+
   return (
     <div>
-      {showing ? <Hello /> : null}
-      <button onClick={onClick}>{ showing ? "Hide" : "Show" }</button>
+      <p>리스트</p>
+      {
+        List.map((element, index) => {
+          return(
+            <p key={index}>{element} : {index},</p>
+          );
+        })
+      }
+      <p>Target : {Target}</p>
+      <br />
+      <button 
+        onClick={ListFunction}
+      >
+        Click
+      </button>
     </div>
   );
 }
