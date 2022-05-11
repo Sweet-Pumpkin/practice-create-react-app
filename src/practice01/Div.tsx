@@ -1,10 +1,17 @@
 import React, { ReactNode } from 'react';
 
-function Div (props: { name1: string, children: ReactNode }) {
+function Div (props: { 
+  name1: string, 
+  span1: ReactNode, 
+  span2: ReactNode,
+}) 
+
+{
   return (
     <div>
-      div: { props.name1 } <br />
-      { props.children }
+      { props.span1 }<br />
+      { props.name1 }<br />
+      { props.span2 }
     </div>
   );
 }

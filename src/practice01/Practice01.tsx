@@ -5,9 +5,7 @@ import Span from './Span';
 function Practice01 () {
   return (
     <div className='App'>
-        <Div name1="name1">
-          <Span name1="name1" name2="name2"/>
-        </Div>
+        <Div name1="name1" span1={Span()} span2={Span()} />
     </div>
   );
 }

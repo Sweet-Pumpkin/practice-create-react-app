@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Span (props: { name1: string, name2: string }) {
+function Span () {
   return (
     <span>
-      span: {props.name1} {props.name2}
+      Hello!
     </span>
   );
 }
