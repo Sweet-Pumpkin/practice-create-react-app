@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Practice04 from './practice/220516/Practice04';
+import Practice05 from './practice/220518/Practice05';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Practice04 />
+  <Practice05 />
 )
