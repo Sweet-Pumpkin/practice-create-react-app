@@ -20,10 +20,9 @@ const users =  [
 
 const Card = (props: { 
   user: { id: number; name: string },  
-  someOnClick: React.MouseEventHandler<HTMLDivElement>;
 }) => {
   return (
-      <div onClick={() => props.someOnClick(user)}>
+      <div>
         id : { props.user.id }<br />
         name : { props.user.name }
       </div>
@@ -31,14 +30,11 @@ const Card = (props: {
   }
   
 const Practice05 = () => {
-  const handleClickCard = (user : any) => {
-    alert(user.name);
-  }
     return (
       <>
         {users.map((user) => {
           return (
-            <Card user={user} key={user.id} someOnClick={handleClickCard} />
+            <Card user={user} key={user.id} />
           );
         })}
       </>
