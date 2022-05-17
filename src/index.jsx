@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Datefns from './practice/220517/Datefns';
+import StyledComponents from './practice/220517/StyledComponents';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Datefns />
+  <StyledComponents />
 )
