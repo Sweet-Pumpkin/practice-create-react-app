@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Practice from './practice/220520/Practice10';
 
 // import Mocking from './practice/220518/Mocking';
 // import Counter from './features/counter/Counter';
@@ -7,8 +8,6 @@ import ReactDOM from 'react-dom/client';
 
 // import { Provider } from 'react-redux';
 // import store from './store/store';
-
-import Practice08 from './practice/220518/Practice08';
 
 // Start the mocking conditionally.
 if (process.env.NODE_ENV === 'development') {
@@ -24,5 +23,5 @@ root.render(
   //   <br />
   //   <Counter2 />
   // </Provider>
-  <Practice08 />
+  <Practice />
 )
