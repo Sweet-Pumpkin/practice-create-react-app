@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect} from 'react'
 
 export default function Practice10() {
   const idInput = useRef(null);
@@ -26,13 +26,11 @@ export default function Practice10() {
         alert("유효하지않은 비밀번호입니다.");
       } 
     } else if (pw.length > 5 && pw.length < 21) {
-      console.log("3p")
-      if (id.length <= 5 && id.length >= 21) {
-        console.log("2p")
-        setId("");
-        idInput.current.focus();
-        alert("유효하지않은 아이디입니다.")
-      }
+        if (id.length > 21 || id.length < 6) {
+          setId("");
+          idInput.current.focus();
+          alert("유효하지않은 아이디입니다.")
+        }
     } else {
       setId("");
       setPw("");
@@ -41,33 +39,36 @@ export default function Practice10() {
     }
   }
 
-  // id text
-  if (id.length === 0) {
-    console.log("sex")
-  } else if (id.length > 0 && id.length < 6) {
-    idText.current.innerText = "유효하지않은 아이디입니다.";
-    idText.current.style.color = "red";
-  } else if (id.length > 5 && id.length < 21) {
-    idText.current.innerText = "사용가능한 아이디입니다.";
-    idText.current.style.color = "green";
-  } else if (id.length > 20) {
-    idText.current.innerText = "유효하지않은 아이디입니다.";
-    idText.current.style.color = "red";
-  }
+  useEffect(() => {
+    // id text
+    if (id.length > 0 && id.length < 6) {
+      idText.current.innerText = "유효하지않은 아이디입니다.";
+      idText.current.style.color = "red";
+    } else if (id.length > 5 && id.length < 21) {
+      idText.current.innerText = "사용가능한 아이디입니다.";
+      idText.current.style.color = "green";
+    } else if (id.length > 20) {
+      idText.current.innerText = "유효하지않은 아이디입니다.";
+      idText.current.style.color = "red";
+    } else {
+      idText.current.innerText = "";
+    }
 
-  // pw text
-  if (pw.length === 0) {
-    console.log("fuck")
-  } else if (pw.length > 0 && pw.length < 6) {
-    pwText.current.innerText = "유효하지않은 비밀번호입니다.";
-    pwText.current.style.color = "red";
-  } else if (pw.length > 5 && pw.length < 21) {
-    pwText.current.innerText = "사용가능한 비밀번호입니다.";
-    pwText.current.style.color = "green";
-  } else if (pw.length > 20) {
-    pwText.current.innerText = "유효하지않은 비밀번호입니다.";
-    pwText.current.style.color = "red";
-  }
+    // pw text
+    if (pw.length > 0 && pw.length < 6) {
+      pwText.current.innerText = "유효하지않은 비밀번호입니다.";
+      pwText.current.style.color = "red";
+    } else if (pw.length > 5 && pw.length < 21) {
+      pwText.current.innerText = "사용가능한 비밀번호입니다.";
+      pwText.current.style.color = "green";
+    } else if (pw.length > 20) {
+      pwText.current.innerText = "유효하지않은 비밀번호입니다.";
+      pwText.current.style.color = "red";
+    } else {
+      pwText.current.innerText = "";
+    }
+  },);
+
 
   return (
     <>
