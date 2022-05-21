@@ -1,63 +1,97 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 
 export default function Practice10() {
+  const idInput = useRef(null);
+  const pwInput = useRef(null);
+  const idText = useRef(null);
+  const pwText = useRef(null);
+
   const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-
-  let idValue = useRef(null);
-  let passwordValue = useRef(null);
-
+  const [pw, setPw] = useState("");
   const handleClick = () => {
-    if (id.length > 5 && id.length < 21 && password.length > 5 && password.length < 21) {
-      alert('회원가입 성공!');
-    } else if (id.length < 5 && id.length > 21 && password.length > 5 && password.length < 21) {
-      return alert("유효하지 않은 id입니다.")
-    } else if (id.length > 5 && id.length < 21 && password.length < 5 && password.length > 21) {
-      return alert("유효하지 않은 password입니다.")
-    } else {
-      return alert("유효하지 않은 id와 password입니다.")
-    }
-  };
-
-  useEffect(() => {
-    if (id === "") {
-      idValue.current.innerText = "";
+    if (id === "" && pw === "") {
+      alert("아이디와 비밀번호를 입력하세요.")
+    } else if (id === "") {
+      alert("아이디를 입력하세요.")
+    } else if (pw === "") {
+      alert("비밀번호를 입력하세요.")
     } else if (id.length > 5 && id.length < 21) {
-      idValue.current.innerText = "";
+      if (pw.length > 5 && pw.length < 21) {
+        setId("");
+        setPw("");
+        alert("회원가입 완료.");
+      } else {
+        setPw("");
+        pwInput.current.focus();
+        alert("유효하지않은 비밀번호입니다.");
+      } 
+    } else if (pw.length > 5 && pw.length < 21) {
+      console.log("3p")
+      if (id.length <= 5 && id.length >= 21) {
+        console.log("2p")
+        setId("");
+        idInput.current.focus();
+        alert("유효하지않은 아이디입니다.")
+      }
     } else {
-      idValue.current.innerText = "유효하지 않은 id입니다."
-    } 
-
-    if (password === "") {
-      passwordValue.current.innerText = "";
-    } else if (password.length > 5 && password.length < 21) {
-      passwordValue.current.innerText = "";
-    } else {
-      passwordValue.current.innerText = "유효하지 않은 password입니다."
+      setId("");
+      setPw("");
+      idInput.current.focus();
+      alert("유효하지않은 아이디와 비밀번호입니다.")
     }
-  });
+  }
+
+  // id text
+  if (id.length === 0) {
+    console.log("sex")
+  } else if (id.length > 0 && id.length < 6) {
+    idText.current.innerText = "유효하지않은 아이디입니다.";
+    idText.current.style.color = "red";
+  } else if (id.length > 5 && id.length < 21) {
+    idText.current.innerText = "사용가능한 아이디입니다.";
+    idText.current.style.color = "green";
+  } else if (id.length > 20) {
+    idText.current.innerText = "유효하지않은 아이디입니다.";
+    idText.current.style.color = "red";
+  }
+
+  // pw text
+  if (pw.length === 0) {
+    console.log("fuck")
+  } else if (pw.length > 0 && pw.length < 6) {
+    pwText.current.innerText = "유효하지않은 비밀번호입니다.";
+    pwText.current.style.color = "red";
+  } else if (pw.length > 5 && pw.length < 21) {
+    pwText.current.innerText = "사용가능한 비밀번호입니다.";
+    pwText.current.style.color = "green";
+  } else if (pw.length > 20) {
+    pwText.current.innerText = "유효하지않은 비밀번호입니다.";
+    pwText.current.style.color = "red";
+  }
 
   return (
-    <div>
+    <>
       <div>
-        <input
-          type="text"
-          placeholder='6글자 이상 20글자 이하'
+        <input 
+          type="text" 
+          ref={ idInput }
+          value={ id }
           onChange={(e) => setId(e.target.value)}
-          />
-      <span ref={ idValue } style={{color: "red"}}></span>
+          placeholder="6자 이상 20자 이하"
+        />
+        <span ref={ idText }></span>
       </div>
       <div>
-        <input
-        type="password"
-        placeholder='12글자 이상 20글자 이하'
-        onChange={(e) => setPassword(e.target.value)}
+        <input 
+          type="password" 
+          ref={ pwInput }
+          value={ pw }
+          onChange={(e) => setPw(e.target.value)}
+          placeholder="6자 이상 20자 이하"
         />
-        <span ref={ passwordValue } style={{color: "red"}}></span>
+        <span ref={ pwText }></span>
       </div>
-      <button type="button" onClick={handleClick} disabled={false}>회원가입</button>
-    </div>
-  );
+      <button onClick={ handleClick }>회원가입</button>
+    </>
+  )
 }
-
-
