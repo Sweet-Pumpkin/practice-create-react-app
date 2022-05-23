@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Practice from './practice/220520/Practice10';
+import Practice from './practice/220523/Practice11';
 
 // import Mocking from './practice/220518/Mocking';
 // import Counter from './features/counter/Counter';
@@ -23,5 +23,5 @@ root.render(
   //   <br />
   //   <Counter2 />
   // </Provider>
-  <Practice />
+    <Practice />
 )
