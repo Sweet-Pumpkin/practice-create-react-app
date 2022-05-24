@@ -6,7 +6,7 @@ export default function Practice11() {
   const [res, setRes] = useState("");
   useEffect(() => {
     if (value === "") {
-      return;
+      return setNum("값을 입력하세요.")
     } else {
       const a = setTimeout(() => setNum("3초 뒤 실행됩니다."), 0);
       const b = setTimeout(() => setNum("2초 뒤 실행됩니다."), 1000);
