@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Practice12() {
   return (
-    <div></div>
+    <div>Practice12</div>
   )
 }
