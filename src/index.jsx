@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Practice from './practice/220523/Practice12';
+import Practice from './practice/220525/Practice15';
 
 // import Mocking from './practice/220518/Mocking';
 // import Counter from './features/counter/Counter';
