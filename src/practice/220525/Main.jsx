@@ -89,7 +89,7 @@ export default function Practice10(props) {
         { 
           id.length > 5 && id.length < 21 &&
           pw.length > 5 && pw.length < 21 ? 
-          <Link to="/login">
+          <Link to="/login/">
             <button onClick={() => {props.idValue(id)}}>회원가입</button>
           </Link> : 
           <button onClick={handleClick}>회원가입</button>
