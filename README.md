@@ -54,6 +54,34 @@ clean-up을 통해 `useEffect()`로 렌더링한 값의 원하는 부분만 출�
 #### Parameter
   - 가변 parameter의 앞에 콜론을 붙이면 뒤 string을 key로 하는 parameter를 받을 수 있다.
   - 예제 코드: [Practice14.jsx](./src/practice/220525/Practice14.jsx)
+
+#### Wildcard와 Navigative
+  - "*"와 <Navigate to="?" />를 활용해서 404 Not Found 페이지 등을 만들 수 있다.
+
 #### 실습코드: [Practice15.jsx](./src/practice/220525/Practice15.jsx)
   - 회원가입 코드 [Main.jsx](./src/practice/220525/Main.jsx)에 아이디와 비밀번호를 입력.
   - 알맞은 아이디와 비밀번호를 입력하면 _Main.jsx_에 입력한 id 값이 나오는 로그인 화면 [Login.jsx](./src/practice/220525/Login.jsx)가 나타나게 하기.
+
+### React 스타일링
+
+### CSS in JS
+  - 자바스크립트 코드로 스타일링하는 방법.
+  - 외부 파일에 CSS를 정의하는 대신, 자바스크립트와 결합하는 패턴을 가지고 있음.
+  - Global Namespace와 Dependencies, Dead Code Elimination, Minification, Sharing Constants, Non-deterministic Resolution, Isolation 등의 이유로 CSS in JS를 사용.
+
+### styled-components
+  - CSS in JS를 사용할 수 있게 도와주는 라이브러리.
+
+  ```
+  import styled from 'styled-components';
+
+  const Sample = styled.div`
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  `;
+
+  export defalut () => (
+    <Sample />
+  );
+  ```
