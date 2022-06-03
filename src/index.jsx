@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Practice from './practice/220530/Practice21';
+import Practice from './practice/220603/Practice25';
 
 // import Mocking from './practice/220518/Mocking';
 // import Counter from './features/counter/Counter';
 // import Counter2 from './practice/220518/Counter2';
 
-// import { Provider } from 'react-redux';
-// import store from './store/store';
+import { Provider } from 'react-redux';
+import store from './practice/220603/store02';
 
 // Start the mocking conditionally.
 if (process.env.NODE_ENV === 'development') {
@@ -18,11 +18,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <Provider store={ store }>
-  //   <Mocking />
-  //   <Counter />
-  //   <br />
-  //   <Counter2 />
-  // </Provider>
+  <Provider store={store}>
     <Practice />
-)
+  </Provider>
+);

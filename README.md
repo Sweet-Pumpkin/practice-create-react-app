@@ -85,3 +85,17 @@ clean-up을 통해 `useEffect()`로 렌더링한 값의 원하는 부분만 출�
     <Sample />
   );
   ```
+
+---
+
+### createContext & useContext
+  - 단순 props drilling이 아닌, 매 컴포넌트 마다 해당 props를 사용할때 전역상태관리가 필요.
+  - 다양한 레벨에 네스팅된 많은 컴포넌트에게 데이터를 전달하기 위한 것.
+  - context를 사용하면 컴포넌트를 재사용하기가 어려워짐.
+
+---
+
+### Redux 기초
+  - store, reducer, action 개념 학습.
+  - createStore 학습.
+  - useSelector & useDispatch 학습.
