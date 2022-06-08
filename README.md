@@ -99,3 +99,4 @@ clean-up을 통해 `useEffect()`로 렌더링한 값의 원하는 부분만 출�
   - store, reducer, action 개념 학습.
   - createStore 학습.
   - useSelector & useDispatch 학습.
+  - middleware & thunk 학습.
