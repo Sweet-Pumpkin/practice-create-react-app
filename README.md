@@ -86,12 +86,18 @@ clean-up을 통해 `useEffect()`로 렌더링한 값의 원하는 부분만 출�
   );
   ```
 
+#### 실습코드: [Practice19.jsx](./src/practice/220530/Practice19.jsx)
+
 ---
 
 ### createContext & useContext
   - 단순 props drilling이 아닌, 매 컴포넌트 마다 해당 props를 사용할때 전역상태관리가 필요.
   - 다양한 레벨에 네스팅된 많은 컴포넌트에게 데이터를 전달하기 위한 것.
   - context를 사용하면 컴포넌트를 재사용하기가 어려워짐.
+
+#### 실습코드1: [Practice20.jsx](./src/practice/220530/Practice20.jsx)
+
+#### 실습코드2: [Practice21.jsx](./src/practice/220530/Practice21.jsx)
 
 ---
 
@@ -100,3 +106,5 @@ clean-up을 통해 `useEffect()`로 렌더링한 값의 원하는 부분만 출�
   - createStore 학습.
   - useSelector & useDispatch 학습.
   - middleware & thunk 학습.
+
+#### 실습코드: [Practice25.jsx](./src/practice/220603/Practice25.jsx), [store02.jsx](./src/practice/220603/store02.jsx)
