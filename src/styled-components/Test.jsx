@@ -1,5 +1,7 @@
 // react 
 import React, { useState } from 'react';
+// components
+import Welcome from './Welcome';
 // style
 import { TestStyle } from './TestStyle';
 
@@ -15,6 +17,7 @@ export default function Test() {
       <button onClick={() => setColorState(prev => !prev)}>
         CHANGE
       </button>
+      <Welcome colorState={colorState}/>
     </TestStyle>
   )
 }
