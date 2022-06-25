@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import Practice from './googlemaps/Maps';
-import Practice from './parameter/Parameter';
+import Practice from './styled-components/Test';
 // import Mocking from './practice/220518/Mocking';
 // import Counter from './features/counter/Counter';
 // import Counter2 from './practice/220518/Counter2';
